@@ -1,0 +1,893 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Playfair+Display:400,400i,700,700i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+/*font-family: 'Poppins', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Muli', sans-serif;*/
+
+/*** 
+
+====================================================================
+	Reset
+====================================================================
+
+ ***/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*** 
+
+====================================================================
+	Global Settings
+====================================================================
+
+ ***/
+
+body {
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button,
+a:hover,
+a:focus,
+a:visited,
+input,
+textarea {
+  text-decoration: none;
+  outline: none !important;
+}
+
+/* Typography */
+
+h1 {
+  font-size: 54px;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+textarea {
+  overflow: hidden;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Main Header */
+
+#main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 88vh;
+}
+
+/* Header Upper */
+
+#main-header #header-upper {
+  display: grid;
+  grid-template-columns: 3fr 6fr;
+  height: 15vh;
+}
+
+#main-header #header-upper #logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+#main-header #header-upper #logo-container #logo-img i {
+  font-size: 35px;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(248, 0, 47, 1) 30%,
+    rgba(26, 26, 29, 1) 80%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+#main-header #header-upper #logo-container #logo-name p a {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #1a1a1d;
+  text-transform: uppercase;
+}
+
+#logo-name a::after {
+  content: "Knjigovodstvo za obrtnike";
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  width: 200px;
+  left: 3px;
+  top: 38px;
+  color: #f8002f;
+}
+
+#main-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#main-nav #contact-items {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #1a1a1d;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+#main-nav #contact-items::after {
+  position: absolute;
+  content: "";
+  left: -50px;
+  top: 0px;
+  border-top: 48px solid #1a1a1d;
+  border-left: 50px solid transparent;
+}
+
+#main-nav #contact-items li,
+#main-nav #nav-items li {
+  margin: 12px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+#main-nav #contact-items a,
+#main-nav #contact-items i {
+  color: #fff;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+#main-nav #contact-items i {
+  margin-right: 8px;
+  color: #f8002f;
+}
+
+#main-nav #nav-items {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: "Poppins";
+  margin-right: 150px;
+}
+
+#main-nav #nav-items li {
+  margin-right: 75px;
+}
+
+#main-nav #nav-items li a {
+  color: #1a1a1d;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#main-nav #nav-items li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #f8002f;
+  transition: width 0.3s;
+}
+
+#main-nav #nav-items li a:hover::after {
+  width: 100%;
+}
+
+#main-nav #contact-items li a:hover {
+  color: #c4c4c4;
+}
+
+/* Header Content */
+#header-content {
+  position: relative;
+  background: url(../images/optimus/header-upper3.jpg) no-repeat center center /
+    cover;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 180px;
+}
+
+#header-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#header-content #inner-box-content {
+  position: relative;
+  width: 45vw;
+  height: 100%;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#header-content #inner-box-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+#header-content #inner-box-content #header-title {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.3;
+  color: #fff;
+  padding: 0 40px;
+  margin-bottom: 10px;
+  z-index: 3;
+  border-left: 7px solid #f8002f;
+  animation: fadeInBottom 1.1s;
+  animation-fill-mode: backwards;
+}
+#header-content #inner-box-content p.small-title {
+  padding: 10px 47px;
+  font-family: "Muli", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f8002f;
+  z-index: 2;
+  animation: fadeInBottom 1s backwards;
+}
+
+#header-content #inner-box-content p.lead {
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  text-align: left;
+  padding: 20px 47px;
+  z-index: 2;
+  animation: fadeInBottom 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+#header-content #inner-box-content button {
+  margin-left: 45px;
+  animation: fadeInBottom 1s;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+/* Services */
+
+#services {
+  background: #f3f3f3;
+}
+
+#services .services-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.services-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  height: 70vh;
+}
+
+.services-cards .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px 20px;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 15%);
+  background: #fff;
+  margin: 0 20px;
+  width: 280px;
+  height: 400px;
+  animation: fadeInLeft 1s backwards;
+}
+
+.services-cards .card .card-icon {
+  position: absolute;
+  top: -40px;
+}
+
+.services-cards .card .card-icon i {
+  background: #f8002f;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 15%);
+  color: #fff;
+  font-size: 36px;
+  padding: 22px;
+  border-radius: 50px;
+}
+
+.services-cards .card .card-title {
+  padding: 0 20px;
+  color: #1a1a1d;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.services-cards .card .card-content {
+  text-align: left;
+  font-family: "Muli", sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  color: #666;
+  padding: 0 10px;
+}
+
+/* About Us */
+
+#about-us {
+  display: flex;
+  height: 85vh;
+  padding: 30px;
+  margin: 40px;
+}
+
+#about-us .about-us-content {
+  flex: 1;
+}
+
+#about-us .about-us-content p.lead {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: justify;
+  padding: 20px 20px 20px 0;
+}
+
+#about-us .about-us-content .small-title,
+#about-us .about-us-content .md-title {
+  text-align: left;
+}
+
+#about-us .about-us-content .title-decoration {
+  color: #f8002f;
+}
+
+#about-us .about-us-content .about-us-list {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  margin-bottom: 50px;
+}
+
+#about-us .about-us-content .about-us-list p {
+  font-size: 15px;
+  font-family: "Muli", sans-serif;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+#about-us .about-us-content .about-us-list p i {
+  font-size: 14px;
+  margin-right: 1px;
+}
+
+#about-us .about-us-content .about-us-contact {
+  display: flex;
+  align-items: center;
+}
+
+#about-us .about-us-content .about-us-contact button {
+  display: flex;
+  align-items: center;
+  padding: 13px 26px;
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.1) 0px 8px 16px -8px;
+}
+
+#about-us .about-us-content .about-us-contact button a {
+  font-size: 13px;
+  font-weight: 800;
+  margin-right: 45px;
+}
+
+#about-us .about-us-content .about-us-contact button:nth-of-type(2) {
+  padding: 20px 26px;
+}
+
+#about-us .about-us-content p.call-text {
+  font-family: "Muli", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+  color: #1a1a1d;
+  letter-spacing: 0;
+  padding: 0 14px;
+}
+
+#about-us .about-us-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 33px;
+  padding: 0 30px;
+}
+
+#about-us .about-us-img img {
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.35) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.4) 0px 8px 16px -8px;
+}
+
+#about-us .about-us-img .counters {
+  display: flex;
+}
+
+#about-us .about-us-img .counters > div {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.4px;
+  padding: 20px 0;
+  margin: 0 30px;
+}
+
+#about-us .about-us-img .counters .counter {
+  color: #f8002f;
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Map */
+
+#map-container #map {
+  height: 55vh;
+  margin-top: -20px;
+}
+
+#map-container .map-header {
+  width: 100%;
+}
+
+#map-container .map-header .map-title {
+  background: #f3f3f3;
+  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+  color: #1a1a1d;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 40px 200px;
+}
+
+/* Contact */
+
+#contact {
+  display: flex;
+  height: 100vh;
+  margin: 40px 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact #contact-container {
+  display: flex;
+  padding-bottom: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 70vw;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+#contact #contact-container #contact-content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  position: relative;
+  z-index: 1;
+}
+
+#contact #contact-container .md-title {
+  font-size: 36px;
+  text-align: left;
+  line-height: 1.5;
+  padding: 50px 50px 0 50px;
+}
+
+#contact #contact-container .md-title .title-decoration {
+  color: #f8002f;
+  text-transform: uppercase;
+}
+
+#contact #contact-container #contact-content #contact-info .lead {
+  font-size: 16px;
+  font-family: "Muli", sans-serif;
+}
+
+#contact #contact-container #contact-content #contact-info #contact-list {
+  padding-left: 20px;
+}
+
+#contact #contact-container #contact-content #contact-info #contact-list i {
+  font-size: 17px;
+  color: #f8002f;
+  margin-right: 7px;
+}
+
+#contact #contact-container #contact-content #contact-info #contact-list li {
+  margin-bottom: 18px;
+}
+
+#contact #contact-container #contact-content #contact-info #contact-list li p {
+  font-size: 22px;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+
+  color: #1a1a1d;
+  line-height: 1.2;
+  display: inline-block;
+}
+
+#contact
+  #contact-container
+  #contact-content
+  #contact-info
+  #contact-list
+  li:nth-of-type(1) {
+  display: flex;
+  align-items: center;
+}
+
+#contact
+  #contact-container
+  #contact-content
+  #contact-info
+  #contact-list
+  li:nth-of-type(1)
+  p {
+  margin-left: 7px;
+}
+
+#contact
+  #contact-container
+  #contact-content
+  #contact-info
+  #contact-list
+  li:nth-of-type(1)
+  i {
+  margin-top: -24px;
+}
+
+/* Form */
+
+#contact-form {
+  padding-right: 30px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: none;
+  padding: 16px 26px;
+  background: #eef1f5;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+#contact #contact-container #contact-content #contact-form button {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#contact #contact-container #contact-content #contact-form .btn-contact::after {
+  width: 45%;
+}
+
+#contact
+  #contact-container
+  #contact-content
+  #contact-form
+  .btn-contact:hover:after {
+  width: 110%;
+}
+
+#contact #contact-container #contact-content #contact-form i {
+  margin-left: 30px;
+}
+
+/* Contact BG Info */
+#contact-bg {
+  background-blend-mode: multiply;
+  background-image: url(../images/optimus/contact-bg.jpg);
+  background-color: #1a1a1d;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#contact-bg #contact-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 44px;
+  font-family: "Muli", sans-serif;
+  font-size: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #fff;
+}
+
+#contact-bg #contact-list p,
+#contact-bg #contact-list .list-icon {
+  color: #fff;
+  text-align: center;
+}
+
+#contact-bg #contact-list .list-icon {
+  padding: 10px 0;
+}
+
+#contact-bg .call-us h2 {
+  margin-top: -10px;
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+#contact-bg .call-us h2 > a {
+  font-size: 1.1em;
+  color: #fff;
+  margin-left: 0.2em;
+}
+
+/* Footer */
+
+#main-footer {
+  background: #f8002f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+}
+
+#main-footer #nav-footer {
+  display: flex;
+}
+
+#main-footer #nav-footer li {
+  margin-right: 40px;
+}
+
+#main-footer #nav-footer li a,
+#main-footer p {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+#main-footer #nav-footer li a:hover {
+  color: #1a1a1d;
+}
+
+/*** 
+
+====================================================================
+Utilities
+====================================================================
+
+***/
+
+.auto-container {
+  max-width: 1280px;
+  padding: 0 30px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.title-decoration {
+  color: #f8002f;
+  font-family: "Muli", sans-serif;
+  font-weight: 900;
+}
+
+.small-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Muli", sans-serif;
+  color: #f8002f;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.md-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.lg-line {
+  width: 50px;
+  height: 4px;
+  background-color: #1a1a1d;
+  margin-bottom: 20px;
+}
+.md-line {
+  width: 40px;
+  height: 3px;
+  background-color: #1a1a1d;
+  margin-bottom: 20px;
+}
+
+.left-line {
+  border-left: 4px solid #f8002f;
+  padding-left: 20px;
+}
+
+.lead {
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/*** 
+
+====================================================================
+	Buttons
+====================================================================
+
+ ***/
+
+.btn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-family: "Muli", sans-serif;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.btn a {
+  margin-right: 28px;
+  font-family: "Muli", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.btn.btn-contact i {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.btn-contact {
+  background: #f8002f;
+  color: #fff;
+  overflow: hidden;
+}
+
+.btn.btn-contact.btn-call {
+  font-size: 1em;
+}
+
+.btn-contact::after {
+  width: 38%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  right: 0;
+  top: 0;
+  transform-origin: 0 0;
+  transform: rotate(-20deg);
+}
+
+.btn-contact:hover:after {
+  width: 110%;
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
