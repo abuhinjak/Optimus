@@ -1,7 +1,10 @@
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 400px) {
+  html {
+    overflow: hidden;
+  }
+
   #main-nav {
-    /* display: none; */
-    visibility: hidden;
+    display: none;
   }
 
   #main-header {
@@ -23,7 +26,8 @@
   }
 
   #header-content {
-    background: url(../images/optimus/header-upper3.jpg) no-repeat left left;
+    background: url(../images/optimus/header-upper3.jpg) no-repeat left left /
+      cover;
     padding: 0;
   }
 
