@@ -4,6 +4,14 @@
     visibility: hidden;
   }
 
+  #main-header {
+    height: 75vh;
+  }
+
+  #main-header #header-upper {
+    height: 12vh;
+  }
+
   #main-header #header-upper #logo-container #logo-name {
     display: none;
   }
@@ -40,15 +48,19 @@
     font-size: 15px;
   }
 
+  #services {
+    height: 220vh;
+  }
+
+  #services .services-header {
+    padding-bottom: 0;
+  }
+
   #services .services-header p.small-title {
     font-size: 14px;
   }
   #services .services-header h2.md-title {
     font-size: 24px;
-  }
-
-  #services {
-    height: 265vh;
   }
 
   .services-cards {
@@ -74,7 +86,7 @@
     flex-direction: column;
     padding: 20px;
     margin: 20px;
-    height: 200vh;
+    height: 150vh;
   }
 
   #about-us .about-us-content .small-title {
@@ -134,7 +146,11 @@
   }
 
   #map-container {
-    height: 65vh;
+    height: 60vh;
+  }
+
+  #contact {
+    height: 85vh;
   }
 
   #contact #contact-container .md-title {
@@ -148,7 +164,8 @@
   }
 
   #contact #contact-container {
-    width: 80vw;
+    margin-top: 50px;
+    width: 90vw;
   }
 
   #contact #contact-container #contact-content #contact-info {
