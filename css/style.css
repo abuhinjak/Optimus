@@ -282,7 +282,7 @@ li {
   font-weight: 700;
   color: #f8002f;
   z-index: 2;
-  animation: fadeInBottom 1s backwards;
+  animation: fadeIn 1s;
 }
 
 #header-content #inner-box-content p.lead {
@@ -870,7 +870,7 @@ Utilities
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
+    opacity: 0.1;
   }
   to {
     opacity: 1;

@@ -1,0 +1,197 @@
+@media screen and (max-width: 376px) {
+  #main-nav {
+    /* display: none; */
+    visibility: hidden;
+  }
+
+  #main-header #header-upper #logo-container #logo-name {
+    display: none;
+  }
+
+  #main-header #header-upper #logo-container #logo-img i {
+    font-size: 36px;
+    margin-top: 14px;
+    padding-left: 50px;
+  }
+
+  #header-content {
+    background: url(../images/optimus/header-upper3.jpg) no-repeat left left;
+    padding: 0;
+  }
+
+  #header-content::before {
+    background: none;
+  }
+
+  #header-content #inner-box-content {
+    width: 100vw;
+  }
+
+  #header-content #inner-box-content #header-title {
+    font-size: 32px;
+  }
+
+  #header-content #inner-box-content p.small-title {
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  #header-content #inner-box-content p.lead {
+    font-size: 15px;
+  }
+
+  #services .services-header p.small-title {
+    font-size: 14px;
+  }
+  #services .services-header h2.md-title {
+    font-size: 24px;
+  }
+
+  #services {
+    height: 265vh;
+  }
+
+  .services-cards {
+    margin-top: 550px;
+    flex-direction: column;
+  }
+
+  .services-cards .card {
+    width: 80vw;
+    margin-bottom: 70px;
+    margin: 0 0 70px 0;
+  }
+
+  .services-cards .card .card-title {
+    padding: 20px 0;
+  }
+
+  .services-cards .card .card-content {
+    padding: 0;
+  }
+
+  #about-us {
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+    height: 200vh;
+  }
+
+  #about-us .about-us-content .small-title {
+    font-size: 14px;
+  }
+
+  #about-us .about-us-content .md-title {
+    font-size: 28px;
+  }
+
+  #about-us .about-us-content p.lead {
+    text-align: left;
+  }
+
+  #about-us .about-us-content .about-us-list {
+    margin-bottom: 20px;
+  }
+
+  #about-us .about-us-content .about-us-list p {
+    margin-right: 10px;
+  }
+
+  #about-us .about-us-content .about-us-contact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #about-us .about-us-content .about-us-contact button {
+    margin: 20px 0;
+  }
+
+  #about-us .about-us-img img {
+    width: 90vw;
+  }
+
+  #about-us .about-us-img .counters {
+    padding: 0 30px;
+  }
+
+  #about-us .about-us-img .counters > div {
+    margin: 10px;
+    padding: 0;
+  }
+
+  #about-us .about-us-img .counters .counter {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  #about-us .about-us-img .counters h6 {
+    font-size: 16px;
+  }
+
+  #map-container .map-header .map-title {
+    font-size: 28px;
+    padding: 30px;
+  }
+
+  #map-container {
+    height: 65vh;
+  }
+
+  #contact #contact-container .md-title {
+    padding: 30px;
+    margin-bottom: 0;
+    font-size: 22px;
+  }
+
+  #contact #contact-container #contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  #contact #contact-container {
+    width: 80vw;
+  }
+
+  #contact #contact-container #contact-content #contact-info {
+    display: none;
+  }
+
+  #contact-form {
+    padding: 0;
+  }
+
+  #contact-bg {
+    height: 60vh;
+  }
+
+  #contact-bg #contact-list {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+
+  #contact-bg #contact-list .list-icon {
+    padding-bottom: 5px;
+  }
+
+  #contact-bg .call-us {
+    padding: 20px;
+  }
+  #contact-bg .call-us h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  #main-footer #nav-footer {
+    display: none;
+  }
+
+  #main-footer p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .left-line {
+    border-width: 3px;
+  }
+}
