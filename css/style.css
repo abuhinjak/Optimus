@@ -1,16 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Playfair+Display:400,400i,700,700i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
 /*font-family: 'Poppins', sans-serif;
-font-family: 'Playfair Display', serif;
 font-family: 'Muli', sans-serif;*/
 
-/*** 
+/**********
 
 ====================================================================
 	Reset
 ====================================================================
 
- ***/
+ **********/
 
 * {
   margin: 0px;
@@ -18,13 +17,13 @@ font-family: 'Muli', sans-serif;*/
   box-sizing: border-box;
 }
 
-/*** 
+/**********
 
 ====================================================================
 	Global Settings
 ====================================================================
 
- ***/
+ **********/
 
 body {
   background: #fff;
@@ -35,44 +34,12 @@ a {
   cursor: pointer;
 }
 
-button,
-a:hover,
+button:focus,
 a:focus,
-a:visited,
 input,
 textarea {
   text-decoration: none;
   outline: none !important;
-}
-
-/* Typography */
-
-h1 {
-  font-size: 54px;
-}
-
-h2 {
-  font-size: 34px;
-}
-
-h3 {
-  font-size: 28px;
-}
-
-h4 {
-  font-size: 24px;
-}
-
-h5 {
-  font-size: 20px;
-}
-
-h6 {
-  font-size: 18px;
-}
-
-textarea {
-  overflow: hidden;
 }
 
 ul,
@@ -82,33 +49,58 @@ li {
   margin: 0px;
 }
 
-/* Main Header */
+/*** Typography ***/
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.7rem;
+}
+
+h6 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+/*** Main Header ***/
 
 #main-header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   height: 88vh;
 }
 
-/* Header Upper */
+/*** Header Upper ***/
 
 #main-header #header-upper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 11vh;
+  width: 100%;
+  background: #fff;
   display: grid;
   grid-template-columns: 3fr 6fr;
-  height: 15vh;
+  box-shadow: none;
+  transition: 0.6s;
+  z-index: 10000;
 }
 
 #main-header #header-upper #logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
 }
 
 #main-header #header-upper #logo-container #logo-img i {
-  font-size: 35px;
   background: -webkit-linear-gradient(
     90deg,
     rgba(248, 0, 47, 1) 30%,
@@ -118,43 +110,88 @@ li {
   -webkit-text-fill-color: transparent;
   margin-right: 8px;
   margin-top: 8px;
+  transition: 0.6s;
+  font-size: 1.7rem;
 }
 
+/*** Sticky Navbar ***/
+#main-header #header-upper.sticky {
+  height: 8vh;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 10px 12px 0px rgba(50, 50, 50, 0.2);
+}
+#main-header #header-upper.sticky #logo-container #logo-img i {
+  font-size: 1.5rem;
+  margin-right: 5px;
+  margin-top: 0;
+}
+
+#main-header #header-upper.sticky #logo-container #logo-name p a {
+  font-size: 1.6rem;
+}
+
+#main-header #header-upper.sticky #logo-container #logo-name p a::after {
+  transform: scale(0);
+}
+
+#main-header #header-upper.sticky #main-nav #contact-items {
+  transform: translateY(-100px);
+  height: 4vh;
+}
+
+#main-header #header-upper.sticky #main-nav #nav-items {
+  transform: translateY(-45%) translateX(-30px) scale(1);
+  height: 5vh;
+}
+
+/*** End Sticky Navbar ***/
 #main-header #header-upper #logo-container #logo-name p a {
   position: relative;
   font-family: "Poppins", sans-serif;
-  font-size: 32px;
+  font-size: 1.7rem;
   font-weight: 600;
   color: #1a1a1d;
   text-transform: uppercase;
+  transition: 0.6s;
 }
 
 #logo-name a::after {
   content: "Knjigovodstvo za obrtnike";
-  font-size: 10px;
   font-family: "Poppins", sans-serif;
+  font-size: 0.6rem;
   position: absolute;
   width: 200px;
   left: 3px;
-  top: 38px;
+  top: 32px;
   color: #f8002f;
+  transition: 0.6s;
 }
 
 #main-nav {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  transition: 0.6s;
 }
 
 #main-nav #contact-items {
   position: relative;
+  height: 5vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding-right: 15px;
   background: #1a1a1d;
   width: 100%;
   font-family: "Poppins", sans-serif;
+  transition: 0.6s;
+}
+
+#main-nav #contact-items li {
+  color: #fff;
+  font-size: 0.8rem;
 }
 
 #main-nav #contact-items::after {
@@ -162,20 +199,20 @@ li {
   content: "";
   left: -50px;
   top: 0px;
-  border-top: 48px solid #1a1a1d;
+  border-top: 36px solid #1a1a1d;
   border-left: 50px solid transparent;
 }
 
 #main-nav #contact-items li,
 #main-nav #nav-items li {
-  margin: 12px 0;
+  margin: 10px 0;
   font-family: "Poppins", sans-serif;
 }
 
 #main-nav #contact-items a,
 #main-nav #contact-items i {
   color: #fff;
-  font-size: 14px;
+  font-size: 0.8rem;
   transition: color 0.3s;
 }
 
@@ -186,21 +223,25 @@ li {
 
 #main-nav #nav-items {
   display: flex;
+  height: 6vh;
   width: 100%;
+  margin-right: 20px;
   align-items: center;
   justify-content: flex-end;
   font-family: "Poppins";
-  margin-right: 150px;
+  transition: 0.6s;
 }
 
 #main-nav #nav-items li {
-  margin-right: 75px;
+  margin: 0 60px;
+  padding: 10px 0;
 }
 
 #main-nav #nav-items li a {
   color: #1a1a1d;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 600;
+  transition: 0.6s;
 }
 
 #main-nav #nav-items li a::after {
@@ -220,10 +261,10 @@ li {
   color: #c4c4c4;
 }
 
-/* Header Content */
+/*** Header Content ***/
 #header-content {
   position: relative;
-  background: url(../images/optimus/header-upper3.jpg) no-repeat center center /
+  background: url(../images/optimus/header-content.jpg) no-repeat center center /
     cover;
   height: 100%;
   display: flex;
@@ -240,14 +281,13 @@ li {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 #header-content #inner-box-content {
   position: relative;
   width: 45vw;
   height: 100%;
-  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -278,7 +318,7 @@ li {
 #header-content #inner-box-content p.small-title {
   padding: 10px 47px;
   font-family: "Muli", sans-serif;
-  font-size: 12px;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #f8002f;
   z-index: 2;
@@ -308,21 +348,22 @@ li {
 
 #services {
   background: #f3f3f3;
+  height: 100vh;
+  padding: 30px 0;
 }
 
 #services .services-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0;
+  padding: 40px 0;
+  margin-bottom: 30px;
 }
 
 .services-cards {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 30px;
-  height: 70vh;
+  justify-content: space-evenly;
 }
 
 .services-cards .card {
@@ -330,15 +371,13 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  padding: 30px 20px;
+  justify-content: space-evenly;
+  padding: 25px;
   border: 1px solid #d9d9d9;
   box-shadow: 0px 0px 15px rgb(0 0 0 / 15%);
   background: #fff;
-  margin: 0 20px;
-  width: 280px;
-  height: 400px;
-  animation: fadeInLeft 1s backwards;
+  width: 22vw;
+  height: 50vh;
 }
 
 .services-cards .card .card-icon {
@@ -350,25 +389,29 @@ li {
   background: #f8002f;
   box-shadow: 0px 0px 15px rgb(0 0 0 / 15%);
   color: #fff;
-  font-size: 36px;
-  padding: 22px;
+  font-size: 2rem;
+  padding: 1.6rem;
   border-radius: 50px;
 }
 
 .services-cards .card .card-title {
-  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  padding: 20px 20px;
   color: #1a1a1d;
   font-family: "Poppins", sans-serif;
   text-align: center;
 }
 
-.services-cards .card .card-content {
+.services-cards .card .card-content,
+.services-cards .card ul li {
   text-align: left;
   font-family: "Muli", sans-serif;
   line-height: 1.4;
   letter-spacing: 0.5px;
   color: #666;
-  padding: 0 10px;
 }
 
 /* About Us */
@@ -380,15 +423,12 @@ li {
   margin: 40px;
 }
 
-#about-us .about-us-content {
-  flex: 1;
-}
-
 #about-us .about-us-content p.lead {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   text-align: justify;
-  padding: 20px 20px 20px 0;
+  padding: 20px 40px 10px 0;
+  margin-bottom: 0;
 }
 
 #about-us .about-us-content .small-title,
@@ -402,19 +442,19 @@ li {
 
 #about-us .about-us-content .about-us-list {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1fr 4fr;
   margin-bottom: 50px;
 }
 
 #about-us .about-us-content .about-us-list p {
-  font-size: 15px;
+  font-size: 1rem;
   font-family: "Muli", sans-serif;
   font-weight: 800;
   margin-bottom: 8px;
 }
 
 #about-us .about-us-content .about-us-list p i {
-  font-size: 14px;
+  font-size: 0.9rem;
   margin-right: 1px;
 }
 
@@ -432,13 +472,13 @@ li {
 }
 
 #about-us .about-us-content .about-us-contact button a {
-  font-size: 13px;
-  font-weight: 800;
-  margin-right: 45px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: 30px;
 }
 
-#about-us .about-us-content .about-us-contact button:nth-of-type(2) {
-  padding: 20px 26px;
+#about-us .about-us-content .about-us-contact button {
+  padding: 1rem 1.5rem;
 }
 
 #about-us .about-us-content p.call-text {
@@ -454,13 +494,11 @@ li {
 #about-us .about-us-img {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  margin-top: 33px;
-  padding: 0 30px;
 }
 
 #about-us .about-us-img img {
+  width: 38vw;
   margin-bottom: 30px;
   border-radius: 20px;
   box-shadow: rgba(50, 50, 93, 0.35) 0px 13px 27px -5px,
@@ -480,7 +518,7 @@ li {
 
 #about-us .about-us-img .counters .counter {
   color: #f8002f;
-  font-size: 32px;
+  font-size: 2.3rem;
   font-weight: 800;
   text-align: center;
   margin-bottom: 10px;
@@ -489,8 +527,15 @@ li {
 /* Map */
 
 #map-container #map {
-  height: 55vh;
+  position: relative;
+  height: 50vh;
   margin-top: -20px;
+  box-shadow: 0px 10px 12px 0px rgba(50, 50, 50, 0.2);
+}
+
+#map-container #map iframe {
+  width: 100%;
+  height: 100%;
 }
 
 #map-container .map-header {
@@ -499,7 +544,7 @@ li {
 
 #map-container .map-header .map-title {
   background: #f3f3f3;
-  font-size: 32px;
+  font-size: 2rem;
   font-family: "Poppins", sans-serif;
   color: #1a1a1d;
   text-transform: uppercase;
@@ -537,7 +582,7 @@ li {
 }
 
 #contact #contact-container .md-title {
-  font-size: 36px;
+  font-size: 2.1rem;
   text-align: left;
   line-height: 1.5;
   padding: 50px 50px 0 50px;
@@ -549,7 +594,7 @@ li {
 }
 
 #contact #contact-container #contact-content #contact-info .lead {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: "Muli", sans-serif;
 }
 
@@ -558,17 +603,25 @@ li {
 }
 
 #contact #contact-container #contact-content #contact-info #contact-list i {
-  font-size: 17px;
+  font-size: 1rem;
   color: #f8002f;
   margin-right: 7px;
 }
 
 #contact #contact-container #contact-content #contact-info #contact-list li {
-  margin-bottom: 18px;
+  margin-bottom: 25px;
 }
 
-#contact #contact-container #contact-content #contact-info #contact-list li p {
-  font-size: 22px;
+#contact #contact-container #contact-content #contact-info #contact-list li p,
+#contact
+  #contact-container
+  #contact-content
+  #contact-info
+  #contact-list
+  li
+  p
+  a {
+  font-size: 1.3rem;
   font-weight: 300;
   font-family: "Poppins", sans-serif;
 
@@ -615,6 +668,7 @@ li {
 
 input,
 textarea {
+  font-family: "Muli", sans-serif;
   width: 100%;
   border: none;
   padding: 16px 26px;
@@ -622,10 +676,13 @@ textarea {
   border-radius: 5px;
   margin-bottom: 15px;
   font-size: 15px;
+  text-decoration: none;
+  outline: none;
+  overflow: hidden;
 }
 
 #contact #contact-container #contact-content #contact-form button {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -650,10 +707,11 @@ textarea {
 #contact-bg {
   background-blend-mode: multiply;
   background-image: url(../images/optimus/contact-bg.jpg);
+  background-repeat: no-repeat;
   background-color: #1a1a1d;
   background-size: cover;
   background-attachment: fixed;
-  height: 50vh;
+  height: 45vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -662,10 +720,10 @@ textarea {
 
 #contact-bg #contact-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 44px;
   font-family: "Muli", sans-serif;
-  font-size: 20px;
+  font-size: 1.4rem;
   width: 100%;
   align-items: center;
   justify-content: space-around;
@@ -675,7 +733,9 @@ textarea {
 }
 
 #contact-bg #contact-list p,
+#contact-bg #contact-list p a,
 #contact-bg #contact-list .list-icon {
+  font-size: 1.2rem;
   color: #fff;
   text-align: center;
 }
@@ -686,14 +746,14 @@ textarea {
 
 #contact-bg .call-us h2 {
   margin-top: -10px;
-  font-size: 40px;
+  font-size: 2.3rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #fff;
 }
 
 #contact-bg .call-us h2 > a {
-  font-size: 1.1em;
+  font-size: 2.3rem;
   color: #fff;
   margin-left: 0.2em;
 }
@@ -730,16 +790,59 @@ textarea {
 /*** 
 
 ====================================================================
+Mobile Menu
+====================================================================
+
+***/
+#mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+#mobile-menu div {
+  width: 28px;
+  height: 3px;
+  background-color: #1a1a1d;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/*** 
+
+====================================================================
 Utilities
 ====================================================================
 
 ***/
 
+#scrollToTop {
+  position: fixed;
+  background: #fff;
+  border-radius: 50%;
+  border: none;
+  bottom: 800px;
+  right: 40px;
+  color: #f8002f;
+  cursor: pointer;
+  z-index: 100000;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#scrollToTop.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 40px;
+}
+
+#scrollToTop i:hover {
+  color: #f8002dcb;
+}
+
 .auto-container {
   max-width: 1280px;
   padding: 0 30px;
-  margin: 0 auto;
-  overflow: hidden;
 }
 
 .title-decoration {
@@ -766,13 +869,13 @@ Utilities
 }
 
 .lg-line {
-  width: 50px;
+  width: 5rem;
   height: 4px;
   background-color: #1a1a1d;
   margin-bottom: 20px;
 }
 .md-line {
-  width: 40px;
+  width: 4rem;
   height: 3px;
   background-color: #1a1a1d;
   margin-bottom: 20px;
@@ -805,7 +908,7 @@ Utilities
   display: inline-block;
   cursor: pointer;
   font-family: "Muli", sans-serif;
-  padding: 12px 22px;
+  padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 50px;
   transition: all 0.3s;
@@ -821,7 +924,7 @@ Utilities
 .btn a {
   margin-right: 28px;
   font-family: "Muli", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: #fff;
   letter-spacing: 1px;
@@ -829,7 +932,7 @@ Utilities
 
 .btn.btn-contact i {
   color: #fff;
-  font-size: 1.1em;
+  font-size: 1rem;
 }
 
 .btn-contact {
@@ -839,7 +942,7 @@ Utilities
 }
 
 .btn.btn-contact.btn-call {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .btn-contact::after {
@@ -855,6 +958,11 @@ Utilities
 
 .btn-contact:hover:after {
   width: 110%;
+}
+
+.swal2-styled.swal2-confirm {
+  background: #f8002f;
+  border-radius: 50px;
 }
 
 @keyframes fadeInBottom {

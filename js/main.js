@@ -1,48 +1,151 @@
-// const counters = document.querySelectorAll('.counter');
-// const speed = 100; // The lower the slower
+// Sticky Navbar
+window.addEventListener("scroll", function() {
+  let header = document.querySelector("#main-header #header-upper");
+  header.classList.toggle("sticky", window.scrollY > 0);
+  console.log(header);
+});
+// End Sticky Navbar
 
-// counters.forEach(counter => {
-// 	const updateCount = () => {
-// 		const target = +counter.getAttribute('data-target');
-// 		const count = +counter.innerText;
+// ScrollToTop
+window.addEventListener("scroll", function(){
+  let scroll = document.querySelector("#scrollToTop");
+  scroll.classList.toggle("active", window.scrollY > 500); 
+});
 
-// 		// Lower inc to slow and higher to slow
-// 		const inc = target / speed;
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+}
+// End ScrollToTop
 
-// 		// console.log(inc);
-// 		// console.log(count);
 
-// 		// Check if target is reached
-// 		if (count < target) {
-// 			// Add inc to count and output in counter
-// 			counter.innerText = count + inc;
-// 			// Call function every ms
-// 			setTimeout(updateCount, 1);
-// 		} else {
-// 			counter.innerText = target;
-// 		}
-// 	};
+// Smooth Scroll
+var scroll = new SmoothScroll('a[href*="#"]', {
+	speed: 800
+});
+var easeInOutQuad = new SmoothScroll('[data-easing="easeInOutQuad"]', {easing: 'easeInOutQuad'});
+// End Smooth Scroll
 
-// 	updateCount();
-// });
 
-// var clients = setInterval(happyClients, 10);
-// let count1 = 1;
+// Mobile Menu 
+let mobileSlide = () => {
+  let mobileMenu = document.getElementById("mobile-menu");
+  let nav = document.getElementById("nav-items");
+  let navLinks = document.querySelectorAll("#nav-items li");
+  // let navItems = document.querySelectorAll("#nav-items nav-links");
+  
+  mobileMenu.addEventListener("click", () => {
+    // Toggle Nav
+    nav.classList.toggle("mobile-active");
 
-// function happyClients() {
-//   count1++;
-//   document.querySelector("number1").innerHTML = count1;
+    // Animate Links
+    navLinks.forEach((link, index) => {
+      if(link.style.animation) {
+        link.style.animation = "";
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease ${index / 7 + 0.5}s forwards`;
+      }
+    }); 
 
-//   if (count1 == 100) {
-//     clearInterval(clients)
-//   }
-// }
+    // Hamburger Animation
+    mobileMenu.classList.toggle("toggle");
+  });
 
-let map;
+  
+  navLinks.forEach(link => link.addEventListener("click", ()=> {
+    nav.classList.remove("mobile-active");
+  }));
+  
+  
+}
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 5,
+mobileSlide();
+
+
+// End Mobile Menu
+
+//javascript for reveal website elements on scroll
+window.addEventListener("scroll", reveal);
+
+function reveal(){
+  var reveals = document.querySelectorAll(".reveal");
+
+  for(var i = 0; i < reveals.length; i++){
+    var windowHeight = window.innerHeight;
+    var revealTop = reveals[i].getBoundingClientRect().top;
+    var revealPoint = 50;
+
+    if(revealTop < windowHeight - revealPoint){
+      reveals[i].classList.add("active");
+    }
+  }
+}
+
+// AOS
+AOS.init({
+  offset: 70, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 1000 // values from 0 to 3000, with step 50ms
+});
+// End AOS
+
+// EmailJS
+function validate() {
+  let name = document.querySelector(".name");
+  let email = document.querySelector(".email");
+  let msg = document.querySelector(".message");
+  let btn = document.querySelector(".submit");
+  const re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (name.value == "" || msg.value == "") {
+      emptyerror();
+    } else if (!(re.test(email.value.trim()))) {
+      error();  
+    } else {
+      sendmail(name.value, email.value, msg.value);
+      success();
+      name.value = "";
+      email.value = "";
+      msg.value = "";
+    }
   });
 }
+validate();
+
+function sendmail(name, email, msg) {
+  emailjs.send("service_9kew26n", "template_hfolbss", {
+    to_name: name,
+    from_name: email,
+    message: msg,
+  });
+}
+
+function emptyerror() {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Molimo popunite sva polja!",
+  });
+}
+
+function error() {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Molimo Vas unesite ispravnu Email adresu!",
+  });
+}
+
+function success() {
+  Swal.fire({
+    icon: "success",
+    title: "Poslano!",
+    text: "Poruka je uspješno poslana",
+  });
+}
+// End EmailJS
