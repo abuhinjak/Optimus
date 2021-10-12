@@ -38,8 +38,7 @@ button:focus,
 a:focus,
 input,
 textarea {
-  text-decoration: none;
-  outline: none !important;
+  outline: none;
 }
 
 ul,
@@ -52,20 +51,20 @@ li {
 /*** Typography ***/
 
 h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
 }
 
 h3 {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
 }
 
 h6 {
-  font-size: 1rem;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 /*** Main Header ***/
@@ -75,7 +74,7 @@ h6 {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 88vh;
+  height: 80vh;
 }
 
 /*** Header Upper ***/
@@ -88,7 +87,7 @@ h6 {
   width: 100%;
   background: #fff;
   display: grid;
-  grid-template-columns: 3fr 6fr;
+  grid-template-columns: 2fr 5fr;
   box-shadow: none;
   transition: 0.6s;
   z-index: 10000;
@@ -106,12 +105,13 @@ h6 {
     rgba(248, 0, 47, 1) 30%,
     rgba(26, 26, 29, 1) 80%
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-right: 8px;
   margin-top: 8px;
   transition: 0.6s;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
 }
 
 /*** Sticky Navbar ***/
@@ -121,13 +121,13 @@ h6 {
   box-shadow: 0px 10px 12px 0px rgba(50, 50, 50, 0.2);
 }
 #main-header #header-upper.sticky #logo-container #logo-img i {
-  font-size: 1.5rem;
-  margin-right: 5px;
+  font-size: 1.7rem;
+  margin-right: 6px;
   margin-top: 0;
 }
 
 #main-header #header-upper.sticky #logo-container #logo-name p a {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
 }
 
 #main-header #header-upper.sticky #logo-container #logo-name p a::after {
@@ -140,7 +140,7 @@ h6 {
 }
 
 #main-header #header-upper.sticky #main-nav #nav-items {
-  transform: translateY(-45%) translateX(-30px) scale(1);
+  transform: translateY(-45%) translateX(-3%) scale(1.1);
   height: 5vh;
 }
 
@@ -148,7 +148,7 @@ h6 {
 #main-header #header-upper #logo-container #logo-name p a {
   position: relative;
   font-family: "Poppins", sans-serif;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   font-weight: 600;
   color: #1a1a1d;
   text-transform: uppercase;
@@ -158,11 +158,11 @@ h6 {
 #logo-name a::after {
   content: "Knjigovodstvo za obrtnike";
   font-family: "Poppins", sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   position: absolute;
   width: 200px;
   left: 3px;
-  top: 32px;
+  top: 35px;
   color: #f8002f;
   transition: 0.6s;
 }
@@ -177,6 +177,8 @@ h6 {
 }
 
 #main-nav #contact-items {
+  background: #1a1a1d;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%);
   position: relative;
   height: 5vh;
   display: flex;
@@ -189,18 +191,11 @@ h6 {
   transition: 0.6s;
 }
 
-#main-nav #contact-items li {
+#main-nav #contact-items li,
+#main-nav #contact-items li a {
   color: #fff;
-  font-size: 0.8rem;
-}
-
-#main-nav #contact-items::after {
-  position: absolute;
-  content: "";
-  left: -50px;
-  top: 0px;
-  border-top: 36px solid #1a1a1d;
-  border-left: 50px solid transparent;
+  font-size: 0.9rem;
+  transition: color 0.3s;
 }
 
 #main-nav #contact-items li,
@@ -209,23 +204,16 @@ h6 {
   font-family: "Poppins", sans-serif;
 }
 
-#main-nav #contact-items a,
-#main-nav #contact-items i {
-  color: #fff;
-  font-size: 0.8rem;
-  transition: color 0.3s;
-}
-
 #main-nav #contact-items i {
   margin-right: 8px;
   color: #f8002f;
 }
 
 #main-nav #nav-items {
+  padding: 0 100px;
   display: flex;
   height: 6vh;
   width: 100%;
-  margin-right: 20px;
   align-items: center;
   justify-content: flex-end;
   font-family: "Poppins";
@@ -344,12 +332,26 @@ h6 {
   animation-fill-mode: backwards;
 }
 
+#header-content #inner-box-content button a {
+  margin-right: 2rem;
+  z-index: 3;
+}
+
+#header-content #inner-box-content button.btn-contact::after {
+  width: 40%;
+}
+
+#header-content #inner-box-content button.btn-contact:hover::after {
+  width: 110%;
+  z-index: 3;
+}
+
 /* Services */
 
 #services {
   background: #f3f3f3;
-  height: 100vh;
-  padding: 30px 0;
+  height: 85vh;
+  padding: 2rem 0;
 }
 
 #services .services-header {
@@ -357,13 +359,14 @@ h6 {
   flex-direction: column;
   align-items: center;
   padding: 40px 0;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 .services-cards {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding: 0 3rem;
 }
 
 .services-cards .card {
@@ -371,13 +374,13 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 25px;
+  justify-content: flex-start;
+  padding: 0 2rem;
   border: 1px solid #d9d9d9;
   box-shadow: 0px 0px 15px rgb(0 0 0 / 15%);
   background: #fff;
-  width: 22vw;
-  height: 50vh;
+  width: 20vw;
+  height: 40vh;
 }
 
 .services-cards .card .card-icon {
@@ -389,27 +392,29 @@ h6 {
   background: #f8002f;
   box-shadow: 0px 0px 15px rgb(0 0 0 / 15%);
   color: #fff;
-  font-size: 2rem;
-  padding: 1.6rem;
+  font-size: 2.3rem;
+  padding: 1.8rem;
   border-radius: 50px;
 }
 
 .services-cards .card .card-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 15vh;
-  padding: 20px 20px;
+  height: 10vh;
+  margin: 3.5rem 0;
+  padding: 2rem 0;
   color: #1a1a1d;
   font-family: "Poppins", sans-serif;
   text-align: center;
+}
+
+.services-cards .card:nth-of-type(1) .card-title {
+  margin-top: 3rem 0 0 3.5rem;
 }
 
 .services-cards .card .card-content,
 .services-cards .card ul li {
   text-align: left;
   font-family: "Muli", sans-serif;
-  line-height: 1.4;
+  line-height: 1.6;
   letter-spacing: 0.5px;
   color: #666;
 }
@@ -418,17 +423,19 @@ h6 {
 
 #about-us {
   display: flex;
-  height: 85vh;
-  padding: 30px;
-  margin: 40px;
+  height: 70vh;
+  padding: 2rem;
+  margin: 3rem;
+}
+
+#about-us .about-us-content {
+  margin-right: 4rem;
 }
 
 #about-us .about-us-content p.lead {
-  font-size: 1rem;
   font-weight: 500;
   text-align: justify;
   padding: 20px 40px 10px 0;
-  margin-bottom: 0;
 }
 
 #about-us .about-us-content .small-title,
@@ -447,14 +454,12 @@ h6 {
 }
 
 #about-us .about-us-content .about-us-list p {
-  font-size: 1rem;
   font-family: "Muli", sans-serif;
   font-weight: 800;
-  margin-bottom: 8px;
+  margin: 0.5rem;
 }
 
 #about-us .about-us-content .about-us-list p i {
-  font-size: 0.9rem;
   margin-right: 1px;
 }
 
@@ -466,26 +471,20 @@ h6 {
 #about-us .about-us-content .about-us-contact button {
   display: flex;
   align-items: center;
-  padding: 13px 26px;
   box-shadow: rgba(50, 50, 93, 0.1) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.1) 0px 8px 16px -8px;
 }
 
 #about-us .about-us-content .about-us-contact button a {
-  font-size: 1rem;
   font-weight: 600;
   margin-right: 30px;
 }
 
-#about-us .about-us-content .about-us-contact button {
-  padding: 1rem 1.5rem;
-}
-
 #about-us .about-us-content p.call-text {
   font-family: "Muli", sans-serif;
+  font-size: 1.1rem;
   font-weight: 600;
   text-align: center;
-  font-size: 16px;
   color: #1a1a1d;
   letter-spacing: 0;
   padding: 0 14px;
@@ -518,10 +517,10 @@ h6 {
 
 #about-us .about-us-img .counters .counter {
   color: #f8002f;
-  font-size: 2.3rem;
+  font-size: 2.8rem;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 10px;
+  margin: 0 3rem 0.8rem;
 }
 
 /* Map */
@@ -556,7 +555,7 @@ h6 {
 
 #contact {
   display: flex;
-  height: 100vh;
+  height: 85vh;
   margin: 40px 0;
   flex-direction: column;
   align-items: center;
@@ -565,11 +564,12 @@ h6 {
 
 #contact #contact-container {
   display: flex;
-  padding-bottom: 40px;
+  padding: 2rem 3rem 5rem;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   width: 70vw;
+  background: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -582,7 +582,7 @@ h6 {
 }
 
 #contact #contact-container .md-title {
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   text-align: left;
   line-height: 1.5;
   padding: 50px 50px 0 50px;
@@ -594,8 +594,8 @@ h6 {
 }
 
 #contact #contact-container #contact-content #contact-info .lead {
-  font-size: 1rem;
   font-family: "Muli", sans-serif;
+  margin-bottom: 2rem;
 }
 
 #contact #contact-container #contact-content #contact-info #contact-list {
@@ -603,7 +603,7 @@ h6 {
 }
 
 #contact #contact-container #contact-content #contact-info #contact-list i {
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: #f8002f;
   margin-right: 7px;
 }
@@ -682,7 +682,6 @@ textarea {
 }
 
 #contact #contact-container #contact-content #contact-form button {
-  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -705,13 +704,14 @@ textarea {
 
 /* Contact BG Info */
 #contact-bg {
+  margin-top: -15rem;
   background-blend-mode: multiply;
   background-image: url(../images/optimus/contact-bg.jpg);
   background-repeat: no-repeat;
   background-color: #1a1a1d;
   background-size: cover;
   background-attachment: fixed;
-  height: 45vh;
+  height: 55vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -725,10 +725,11 @@ textarea {
   font-family: "Muli", sans-serif;
   font-size: 1.4rem;
   width: 100%;
+  margin-top: 3rem;
   align-items: center;
   justify-content: space-around;
   color: #fff;
-  padding-bottom: 10px;
+  padding-bottom: 2rem;
   border-bottom: 1px dotted #fff;
 }
 
@@ -833,7 +834,7 @@ Utilities
 #scrollToTop.active {
   visibility: visible;
   opacity: 1;
-  bottom: 40px;
+  bottom: 100px;
 }
 
 #scrollToTop i:hover {
@@ -904,6 +905,7 @@ Utilities
  ***/
 
 .btn {
+  font-size: 1.1rem;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -924,7 +926,6 @@ Utilities
 .btn a {
   margin-right: 28px;
   font-family: "Muli", sans-serif;
-  font-size: 1rem;
   font-weight: 600;
   color: #fff;
   letter-spacing: 1px;
@@ -932,7 +933,6 @@ Utilities
 
 .btn.btn-contact i {
   color: #fff;
-  font-size: 1rem;
 }
 
 .btn-contact {
@@ -941,12 +941,8 @@ Utilities
   overflow: hidden;
 }
 
-.btn.btn-contact.btn-call {
-  font-size: 1rem;
-}
-
 .btn-contact::after {
-  width: 38%;
+  width: 33%;
   height: 300%;
   background: rgba(255, 255, 255, 0.2);
   z-index: 1;
@@ -958,10 +954,10 @@ Utilities
 
 .btn-contact:hover:after {
   width: 110%;
+  z-index: 1;
 }
-
 .swal2-styled.swal2-confirm {
-  background: #f8002f;
+  background: #f8002f !important;
   border-radius: 50px;
 }
 
@@ -997,5 +993,1441 @@ Utilities
 
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  #main-nav #nav-items {
+    padding: 0 65px;
+  }
+
+  h2 {
+    font-size: 2.1rem;
+  }
+
+  .services-cards .card .card-icon i {
+    font-size: 2.1rem;
+    padding: 1.7rem;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  .services-cards .card .card-content,
+  .services-cards .card ul li {
+    font-size: 1rem;
+  }
+
+  .services-cards .card {
+    height: 42vh;
+  }
+
+  #services {
+    height: 90vh;
+  }
+
+  #about-us {
+    height: 65vh;
+  }
+
+  #about-us .about-us-content p.lead {
+    font-size: 1rem;
+  }
+
+  #contact {
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 1536px) {
+  #main-nav #nav-items {
+    padding: 0 50px;
+  }
+
+  #services {
+    height: 100vh;
+    padding: 2rem;
+  }
+
+  .services-cards {
+    padding: 0 1rem;
+  }
+
+  .services-cards .card {
+    height: 48vh;
+    width: 21vw;
+  }
+
+  #about-us {
+    height: 75vh;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+
+  #contact {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  #main-nav #nav-items {
+    padding: 0 32px;
+  }
+
+  .services-cards .card {
+    width: 22vw;
+  }
+
+  h2 {
+    font-size: 2.1rem;
+  }
+
+  .services-cards {
+    justify-content: space-between;
+  }
+
+  #about-us .about-us-content {
+    margin-right: 1rem;
+  }
+
+  #about-us .about-us-img .counters .counter {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  #main-header {
+    height: 88vh;
+  }
+  #main-header #header-upper #logo-container #logo-name p a {
+    font-size: 1.8rem;
+  }
+
+  #logo-name a::after {
+    font-size: 0.6rem;
+  }
+
+  #main-nav #contact-items li,
+  #main-nav #contact-items li a {
+    font-size: 0.8rem;
+  }
+
+  #main-nav #nav-items li a {
+    font-size: 1.1rem;
+  }
+
+  #header-content #inner-box-content p.small-title {
+    font-size: 0.7rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .services-cards .card {
+    height: 52vh;
+  }
+
+  #services {
+    height: 110vh;
+  }
+
+  .services-cards {
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  #about-us {
+    height: 80vh;
+  }
+
+  #contact {
+    height: 112vh;
+  }
+
+  #about-us .about-us-content .about-us-list p {
+    margin: 0.3rem;
+  }
+
+  #about-us .about-us-content p.lead {
+    padding: 20px 40px 0 0;
+  }
+
+  #about-us .about-us-content {
+    margin-right: 1rem;
+  }
+
+  #about-us .about-us-img .counters .counter {
+    margin: 0.8rem 0;
+  }
+
+  #contact #contact-container {
+    padding: 2rem 2rem 5rem;
+  }
+
+  #contact #contact-container .md-title {
+    font-size: 2.1rem;
+  }
+
+  #contact #contact-container #contact-content #contact-info #contact-list i {
+    font-size: 1.2rem;
+  }
+
+  #contact #contact-container #contact-content #contact-info #contact-list li p,
+  #contact
+    #contact-container
+    #contact-content
+    #contact-info
+    #contact-list
+    li
+    p
+    a {
+    font-size: 1.2rem;
+  }
+
+  #contact-bg #contact-list p,
+  #contact-bg #contact-list p a,
+  #contact-bg #contact-list .list-icon {
+    font-size: 1.1rem;
+  }
+
+  #contact-bg .call-us h2 {
+    font-size: 2.1rem;
+  }
+
+  #contact-bg .call-us h2 > a {
+    font-size: 2.1rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #main-header {
+    height: 90vh;
+  }
+
+  #main-header #header-upper.sticky #logo-container #logo-name p a {
+    font-size: 1.7rem;
+  }
+
+  #main-header #header-upper.sticky #logo-container #logo-img i {
+    font-size: 1.6rem;
+  }
+
+  #main-header #header-upper #logo-container #logo-name p a {
+    font-size: 1.7rem;
+  }
+
+  .services-cards .card {
+    height: 50vh;
+  }
+
+  #services {
+    height: 110vh;
+  }
+
+  #contact #contact-container {
+    padding: 1rem 1rem 4rem;
+  }
+
+  #contact {
+    height: 115vh;
+  }
+
+  #logo-name a::after {
+    top: 33px;
+  }
+
+  #header-content #inner-box-content {
+    width: 47vw;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+  .services-cards .card {
+    width: 23vw;
+  }
+
+  .services-cards .card .card-icon i {
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  .services-cards .card .card-title {
+    margin: 2.4rem 0;
+  }
+
+  .services-cards .card .card-content,
+  .services-cards .card ul li {
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+  }
+
+  .services-cards .card {
+    padding: 0 1.5rem;
+  }
+
+  #about-us {
+    height: 85vh;
+  }
+
+  #contact-bg {
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 1280px) and (min-height: 1024px) {
+  #main-header {
+    height: 75vh;
+  }
+  #main-header #header-upper #logo-container #logo-name p a {
+    font-size: 2rem;
+  }
+  #logo-name a::after {
+    top: 38px;
+    font-size: 0.7rem;
+  }
+  .services-cards .card {
+    height: 38vh;
+  }
+  .services-cards .card .card-title {
+    margin: 2.2rem 0;
+  }
+  #services {
+    height: 80vh;
+  }
+
+  #main-header #header-upper #logo-container #logo-img i {
+    font-size: 2.2rem;
+  }
+
+  #main-nav #nav-items {
+    padding: 0 24px;
+  }
+
+  #about-us {
+    height: 65vh;
+  }
+
+  #contact {
+    height: 80vh;
+  }
+
+  #contact-bg {
+    height: 47vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #main-header #header-upper #logo-container #logo-img i {
+    margin-right: 5px;
+    font-size: 1.6rem;
+  }
+
+  #main-header #header-upper #logo-container #logo-name p a {
+    font-size: 1.5rem;
+  }
+
+  #logo-name a::after {
+    top: 28px;
+  }
+
+  #main-header #header-upper.sticky #logo-container #logo-img i {
+    font-size: 1.4rem;
+  }
+
+  #main-header #header-upper.sticky #logo-container #logo-name p a {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .services-cards .card .card-icon i {
+    font-size: 1.6rem;
+    padding: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .services-cards .card .card-title {
+    margin: 1.3rem 0;
+  }
+
+  .services-cards .card {
+    height: 42vh;
+  }
+
+  .services-cards .card {
+    width: 22vw;
+  }
+
+  .services-cards .card {
+    padding: 0 1.2rem;
+  }
+
+  #about-us {
+    height: 82vh;
+  }
+
+  #contact #contact-container {
+    padding: 0rem 0rem 2rem;
+  }
+
+  #logo-name a::after {
+    font-size: 0.5rem;
+  }
+
+  #main-nav #contact-items li,
+  #main-nav #contact-items li a {
+    font-size: 0.7rem;
+  }
+
+  #main-nav #nav-items li a {
+    font-size: 0.9rem;
+  }
+
+  #header-content #inner-box-content p.small-title {
+    font-size: 0.6rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 0.9rem;
+    letter-spacing: 0.1px;
+  }
+
+  #contact #contact-container .md-title {
+    font-size: 1.8rem;
+  }
+
+  #contact #contact-container #contact-content #contact-info #contact-list i {
+    font-size: 1rem;
+  }
+
+  #contact #contact-container #contact-content #contact-info #contact-list li p,
+  #contact
+    #contact-container
+    #contact-content
+    #contact-info
+    #contact-list
+    li
+    p
+    a {
+    font-size: 1.1rem;
+  }
+
+  #main-nav #contact-items {
+    justify-content: flex-end;
+  }
+
+  #main-nav #contact-items li,
+  #main-nav #nav-items li {
+    margin: 10px 19px;
+  }
+
+  #main-nav #contact-items i {
+    margin-right: 3px;
+  }
+
+  #main-nav #nav-items {
+    padding: 0 0;
+  }
+
+  .services-cards {
+    justify-content: space-evenly;
+  }
+
+  #about-us .about-us-img .counters .counter {
+    font-size: 1.8rem;
+  }
+
+  #main-nav #nav-items li {
+    margin: 0 32px;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.3rem;
+  }
+
+  .small-title {
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+  }
+
+  .services-cards .card .card-content,
+  .services-cards .card ul li {
+    font-size: 0.8rem;
+  }
+
+  #about-us .about-us-content p.lead {
+    font-size: 0.8rem;
+  }
+
+  h6 {
+    font-size: 0.8rem;
+  }
+
+  #about-us {
+    padding: 1rem 0;
+  }
+
+  #about-us .about-us-content .about-us-list p {
+    font-size: 0.8rem;
+  }
+
+  #about-us .about-us-content p.call-text {
+    font-size: 0.8rem;
+  }
+
+  #about-us .about-us-img .counters > div {
+    padding: 0px 0;
+  }
+
+  #map-container .map-header .map-title {
+    font-size: 1.8rem;
+    padding: 30px 75px;
+  }
+
+  #contact
+    #contact-container
+    #contact-content
+    #contact-info
+    #contact-list
+    li:nth-of-type(1)
+    i {
+    margin-top: -12px;
+  }
+
+  input,
+  textarea {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.2px;
+  }
+
+  #contact-bg #contact-list {
+    font-size: 1rem;
+  }
+
+  .fa,
+  .fas {
+    font-weight: 700;
+  }
+
+  #contact-bg #contact-list {
+    font-size: 0.9rem;
+  }
+
+  #contact-bg #contact-list p,
+  #contact-bg #contact-list p a,
+  #contact-bg #contact-list .list-icon {
+    font-size: 1rem;
+  }
+
+  #contact-bg .call-us h2 {
+    font-size: 1.8rem;
+  }
+
+  #contact {
+    height: 95vh;
+  }
+
+  #contact-bg {
+    height: 55vh;
+  }
+
+  #main-footer #nav-footer li a,
+  #main-footer p {
+    font-size: 0.8rem;
+  }
+
+  #contact-bg {
+    margin-top: -10rem;
+  }
+
+  #services {
+    height: 95vh;
+  }
+
+  #about-us {
+    height: 70vh;
+  }
+
+  #contact {
+    height: 85vh;
+  }
+
+  #contact-bg {
+    height: 51vh;
+  }
+
+  #contact-bg {
+    margin-top: -11rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main-header #header-upper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #main-nav #contact-items {
+    display: none;
+  }
+  #main-nav #nav-items,
+  #main-header #header-upper.sticky #main-nav #nav-items {
+    position: absolute;
+    right: 0vw;
+    height: 47vh;
+    top: 10vh;
+    background: #fff;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translateX(120%);
+    transition: transform 0.5s ease-in;
+  }
+
+  #main-header #header-upper.sticky #main-nav #nav-items {
+    top: 8vh;
+  }
+  #main-header #header-upper.sticky #main-nav #nav-items.mobile-active,
+  #main-nav #nav-items.mobile-active {
+    transform: translateX(0%);
+  }
+
+  #main-nav #nav-items li {
+    margin: 20px 0;
+  }
+
+  #main-nav #nav-items li a {
+    color: #1a1a1d;
+    font-size: 1.4rem;
+  }
+
+  #nav-items li {
+    opacity: 0;
+  }
+
+  #main-nav #mobile-menu {
+    display: block;
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  @keyframes navLinkFade {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  /* End Mobile Menu */
+
+  #main-header {
+    height: 85vh;
+  }
+
+  #main-header #header-upper {
+    height: 11vh;
+  }
+
+  #main-header #header-upper #logo-container #logo-img i {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+  #logo-name a::after {
+    top: 35px;
+  }
+
+  #main-header #header-upper #logo-container #logo-name p a {
+    font-size: 30px;
+  }
+
+  #header-content {
+    background: url(../images/optimus/header-upper3.jpg) no-repeat left left /
+      cover;
+    padding: 0;
+  }
+
+  #header-content #inner-box-content {
+    width: 100vw;
+    padding: 30px 0 0 50px;
+  }
+
+  #header-content #inner-box-content #header-title {
+    font-size: 3rem;
+    margin-bottom: 14px;
+  }
+
+  #header-content #inner-box-content p.small-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  #header-content #inner-box-content p.lead {
+    font-size: 0.9rem;
+  }
+
+  #services {
+    height: 200vh;
+  }
+
+  #services .services-header p.small-title {
+    font-size: 1rem;
+  }
+  #services .services-header h2.md-title {
+    font-size: 2rem;
+  }
+
+  .services-cards {
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .services-cards .card {
+    width: 40vw;
+    margin-bottom: 70px;
+    margin: 20px 0 70px 0;
+    padding: 40px;
+    height: 60vh;
+  }
+
+  .services-cards .card .card-icon i {
+    font-size: 2rem;
+  }
+
+  .services-cards .card .card-title {
+    height: 15vh;
+    font-size: 1.8rem;
+  }
+
+  .services-cards .card .card-content,
+  .services-cards .card ul li {
+    padding: 0;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  #about-us {
+    flex-direction: column;
+    padding: 40px;
+    margin: 20px;
+    height: 180vh;
+  }
+
+  #about-us .about-us-content .small-title {
+    font-size: 16px;
+  }
+
+  #about-us .about-us-content .md-title {
+    font-size: 34px;
+  }
+
+  #about-us .about-us-content p.lead {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  #about-us .about-us-content .about-us-list {
+    margin: 30px 0;
+  }
+
+  #about-us .about-us-content .about-us-list p {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+
+  #about-us .about-us-content .about-us-contact {
+    align-items: center;
+  }
+
+  #about-us .about-us-content .about-us-contact button {
+    margin: 20px 0;
+  }
+
+  #about-us .about-us-content .about-us-contact button a {
+    font-size: 1rem;
+    margin-right: 45px;
+  }
+
+  #about-us .about-us-img {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 6fr 2fr;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+  }
+
+  #about-us .about-us-img img {
+    width: 60vw;
+  }
+
+  #about-us .about-us-img .counters {
+    display: flex;
+    flex-direction: column;
+    margin-right: 3rem;
+  }
+
+  #about-us .about-us-img .counters > div {
+    margin: 10px;
+    padding: 20px 0;
+  }
+
+  #about-us .about-us-img .counters .counter {
+    font-size: 2.4rem;
+    margin-bottom: 5px;
+  }
+
+  #about-us .about-us-img .counters h6 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  #map-container .map-header .map-title {
+    text-align: center;
+    font-size: 2rem;
+    padding: 40px 0;
+  }
+
+  #map-container #map {
+    height: 50vh;
+  }
+
+  #contact {
+    height: 70vh;
+  }
+
+  #contact #contact-container .md-title {
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 20px;
+    font-size: 1.9rem;
+  }
+
+  #contact #contact-container #contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  #contact #contact-container {
+    margin: 50px 0;
+    width: 75vw;
+    align-items: stretch;
+  }
+
+  #contact #contact-container #contact-content #contact-info {
+    display: none;
+  }
+
+  #contact-form {
+    padding: 0;
+  }
+
+  #contact #contact-container #contact-content #contact-form button {
+    margin-top: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 15px 30px;
+  }
+
+  #contact #contact-container #contact-content #contact-form i {
+    margin-left: 45px;
+  }
+
+  #contact-bg {
+    height: 55vh;
+  }
+
+  #contact-bg #contact-list {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    font-size: 1.1rem;
+    padding: 40px 0 50px 0;
+  }
+
+  #contact-bg #contact-list .list-icon {
+    padding-bottom: 7px;
+  }
+
+  #contact-bg .call-us h2,
+  #contact-bg .call-us h2 a {
+    font-size: 1.9rem;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  #main-footer {
+    display: block;
+  }
+
+  #main-footer #nav-footer {
+    display: none;
+  }
+
+  #main-footer p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .left-line {
+    border-width: 3px;
+  }
+
+  #main-header {
+    height: 80vh;
+  }
+  #header-content #inner-box-content p.small-title {
+    font-size: 0.7rem;
+  }
+  .services-cards .card {
+    height: 38vh;
+  }
+  .services-cards .card .card-title {
+    height: 13vh;
+  }
+  #services {
+    height: 130vh;
+  }
+  #about-us {
+    padding: 3rem;
+    height: 130vh;
+  }
+
+  #about-us .about-us-img .counters {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  #about-us .about-us-img img {
+    width: 80vw;
+  }
+  #contact {
+    height: 64vh;
+  }
+
+  #main-header #header-upper #logo-container {
+    margin-right: 5rem;
+  }
+
+  #main-nav {
+    margin-left: 6rem;
+  }
+
+  #logo-name a::after {
+    font-size: 0.6rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+  .services-cards .card .card-title {
+    margin: 0 0;
+  }
+  .services-cards .card .card-content,
+  .services-cards .card ul li {
+    font-size: 1rem;
+  }
+  #contact-bg #contact-list p,
+  #contact-bg #contact-list p a,
+  #contact-bg #contact-list .list-icon {
+    font-size: 1.2rem;
+  }
+
+  #main-header #header-upper.sticky {
+    height: 7vh;
+  }
+
+  .services-cards .card .card-title {
+    padding-top: 2rem;
+  }
+
+  #main-nav #nav-items,
+  #main-header #header-upper.sticky #main-nav #nav-items {
+    right: 0vw;
+    height: 47vh;
+    background: #fff;
+  }
+  #main-header #header-upper.sticky #main-nav #nav-items {
+    top: 7vh;
+  }
+  #about-us .about-us-img {
+    grid-template-columns: 1fr;
+  }
+  #contact-form {
+    padding: 2rem;
+  }
+  #contact #contact-container .md-title {
+    padding: 3rem 2rem 0;
+    font-size: 1.7rem;
+  }
+
+  input,
+  textarea {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  #contact {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  #main-header #header-upper #logo-container #logo-img i {
+    padding-left: 3rem;
+  }
+
+  #main-nav {
+    margin-left: 0;
+  }
+
+  #main-nav #nav-items,
+  #main-header #header-upper.sticky #main-nav #nav-items {
+    height: 50vh;
+  }
+
+  #main-nav #nav-items,
+  #main-header #header-upper.sticky #main-nav #nav-items {
+    width: 100vw;
+  }
+
+  #services .services-header h2.md-title {
+    font-size: 1.5rem;
+  }
+
+  #header-content #inner-box-content #header-title {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+
+  #header-content #inner-box-content p.lead {
+    font-size: 1rem;
+  }
+
+  #main-header {
+    height: 85vh;
+  }
+
+  #main-header #header-upper.sticky {
+    padding: 0;
+  }
+
+  .services-cards {
+    flex-direction: column;
+  }
+
+  .services-cards .card {
+    height: 40vh;
+    width: 80vw;
+    margin: 10px 0 70px 0;
+  }
+
+  .services-cards .card .card-content,
+  .services-cards .card ul li {
+    text-align: left;
+  }
+
+  .services-cards .card .card-title {
+    padding-top: 1rem;
+    height: 12vh;
+  }
+
+  .services-cards .card:nth-of-type(1) .card-title {
+    margin-bottom: 1rem;
+  }
+
+  #services {
+    height: 230vh;
+  }
+
+  #about-us {
+    padding: 3rem 1rem;
+    height: 170vh;
+  }
+
+  #about-us .about-us-content .small-title {
+    font-size: 0.9rem;
+  }
+
+  #about-us .about-us-content .md-title {
+    font-size: 2rem;
+  }
+
+  #about-us .about-us-content .about-us-contact button {
+    margin: 1.7rem 0;
+  }
+
+  #about-us .about-us-img img {
+    width: 85vw;
+  }
+
+  #about-us .about-us-img .counters h6 {
+    font-size: 1rem;
+  }
+
+  #about-us .about-us-img .counters .counter {
+    font-size: 2.1rem;
+  }
+
+  #about-us .about-us-img .counters {
+    margin-right: 2.5rem;
+  }
+
+  #contact #contact-container .md-title {
+    padding: 1rem;
+    font-size: 1.4rem;
+  }
+
+  #contact-form {
+    padding: 0;
+  }
+
+  #contact #contact-container #contact-content #contact-form button {
+    margin: 1.5rem 0 1rem 3.5rem;
+    padding: 1rem 2rem;
+  }
+
+  #contact #contact-container {
+    width: 85vw;
+  }
+
+  #contact {
+    height: 80vh;
+  }
+
+  #contact-bg #contact-list {
+    grid-template-columns: 1fr;
+    font-size: 1rem;
+  }
+
+  #contact-bg {
+    height: 75vh;
+  }
+
+  #contact-bg #contact-list p,
+  #contact-bg #contact-list p a,
+  #contact-bg #contact-list .list-icon {
+    font-size: 1.1rem;
+  }
+
+  #contact-bg .call-us h2,
+  #contact-bg .call-us h2 a {
+    font-size: 1.7rem;
+    margin: 20px 0px;
+  }
+
+  #main-footer p {
+    font-size: 0.8rem;
+  }
+
+  #header-content #inner-box-content {
+    padding: 2rem 1rem 0 1.7rem;
+  }
+
+  .small-title {
+    text-align: left;
+  }
+
+  #header-content #inner-box-content #header-title {
+    padding: 0 1.3rem;
+    border-left: 5px solid #f8002f;
+  }
+
+  #header-content #inner-box-content p.small-title {
+    padding: 1rem 2.6rem;
+  }
+
+  #header-content #inner-box-content p.lead {
+    padding: 1.4rem 2.6rem;
+  }
+
+  #header-content #inner-box-content button {
+    margin-left: 2.6rem;
+  }
+
+  #services .services-header {
+    padding: 2rem;
+    margin-bottom: 0;
+  }
+
+  #about-us .about-us-content .about-us-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #about-us .about-us-content .about-us-contact {
+    flex-direction: column;
+  }
+
+  #about-us .about-us-content p.call-text {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+  }
+
+  #contact #contact-container {
+    padding: 2rem 1rem 2rem;
+  }
+
+  #about-us .about-us-img img {
+    margin-bottom: 0;
+  }
+
+  .auto-container {
+    padding: 0 1rem;
+  }
+
+  #contact-bg .call-us h2 {
+    padding: 0 4rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  #services .services-header {
+    padding: 1rem;
+  }
+
+  .services-cards .card {
+    height: 42vh;
+    width: 85vw;
+  }
+
+  #services {
+    height: 240vh;
+  }
+
+  #about-us .about-us-content .md-title {
+    font-size: 1.8rem;
+  }
+
+  #about-us .about-us-img img {
+    width: 87vw;
+  }
+
+  #about-us .about-us-img .counters .counter {
+    font-size: 1.8rem;
+  }
+
+  #about-us .about-us-img .counters h6 {
+    font-size: 0.9rem;
+  }
+
+  #about-us {
+    height: 180vh;
+  }
+
+  .auto-container {
+    padding: 0 0.5rem;
+  }
+
+  #contact #contact-container #contact-content #contact-form button {
+    margin: 1.5rem 0 1rem 3rem;
+  }
+
+  #contact {
+    height: 85vh;
+  }
+  #contact #contact-container {
+    width: 88vw;
+  }
+
+  .services-cards .card {
+    padding: 2rem;
+  }
+
+  #about-us .about-us-img {
+    margin-top: 2rem;
+  }
+
+  #map-container .map-header .map-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #main-header #header-upper #logo-container {
+    margin-right: 0;
+  }
+
+  #main-header #header-upper #logo-container #logo-img i {
+    font-size: 1.6rem;
+  }
+
+  #main-header #header-upper #logo-container #logo-name p a {
+    font-size: 1.6rem;
+  }
+
+  #logo-name a::after {
+    top: 32px;
+  }
+
+  #logo-name a::after {
+    font-size: 0.5rem;
+  }
+
+  .services-cards .card .card-title {
+    font-size: 1.5rem;
+  }
+
+  #main-header #header-upper #logo-container #logo-img i {
+    padding-left: 2rem;
+  }
+
+  #header-content #inner-box-content {
+    padding: 2rem 1rem 0px 1rem;
+  }
+
+  #header-content #inner-box-content #header-title {
+    font-size: 1.8rem;
+  }
+
+  #contact-bg {
+    height: 80vh;
+  }
+
+  #contact-bg .call-us h2 {
+    padding: 0px 3rem;
+  }
+
+  #contact-bg .call-us h2,
+  #contact-bg .call-us h2 a {
+    margin: 2rem 0;
+  }
+
+  #about-us {
+    height: 190vh;
+  }
+
+  #contact {
+    height: 90vh;
+  }
+}
+
+@media screen and (max-width: 375px) and (max-height: 667px) {
+  #main-header {
+    height: 95vh;
+  }
+
+  #main-header #header-upper.sticky {
+    height: 9vh;
+  }
+
+  #main-nav #nav-items,
+  #main-header #header-upper.sticky #main-nav #nav-items {
+    height: 60vh;
+  }
+
+  .services-cards .card {
+    height: 50vh;
+  }
+
+  #services {
+    height: 290vh;
+  }
+
+  #about-us {
+    height: 230vh;
+  }
+
+  #contact {
+    height: 105vh;
+  }
+
+  #contact-bg {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #main-header {
+    height: 90vh;
+  }
+
+  .services-cards .card {
+    height: 45vh;
+  }
+
+  #services {
+    height: 255vh;
+  }
+
+  #about-us {
+    height: 200vh;
+  }
+
+  #contact-bg {
+    height: 85vh;
+  }
+}
+
+@media screen and (max-width: 360px) and (max-height: 640px) {
+  #main-header {
+    height: 95vh;
+  }
+
+  .services-cards .card {
+    height: 50vh;
+  }
+
+  #services {
+    height: 290vh;
+  }
+
+  #about-us {
+    height: 240vh;
+  }
+
+  #contact-bg {
+    height: 100vh;
+  }
+
+  #contact {
+    height: 120vh;
   }
 }
