@@ -2228,6 +2228,49 @@ Utilities
   }
 }
 
+@media screen and (max-width: 414px) and (max-height: 736px) {
+  #main-header {
+    height: 95vh;
+  }
+
+  .services-cards .card {
+    height: 45vh;
+    width: 85vw;
+  }
+
+  #services {
+    height: 270vh;
+  }
+
+  #about-us {
+    height: 210vh;
+  }
+
+  #contact {
+    height: 100vh;
+  }
+
+  #contact-bg {
+    height: 95vh;
+  }
+
+  #main-header #header-upper #logo-container #logo-img i {
+    font-size: 1.7rem;
+  }
+
+  #main-header #header-upper #logo-container #logo-name p a {
+    font-size: 1.6rem;
+  }
+
+  #logo-name a::after {
+    top: 32px;
+  }
+
+  #main-header #header-upper.sticky {
+    height: 9vh;
+  }
+}
+
 @media screen and (max-width: 390px) {
   #services .services-header {
     padding: 1rem;
