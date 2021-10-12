@@ -34,8 +34,7 @@ let mobileSlide = () => {
   let mobileMenu = document.getElementById("mobile-menu");
   let nav = document.getElementById("nav-items");
   let navLinks = document.querySelectorAll("#nav-items li");
-  // let navItems = document.querySelectorAll("#nav-items nav-links");
-  
+
   mobileMenu.addEventListener("click", () => {
     // Toggle Nav
     nav.classList.toggle("mobile-active");
@@ -54,9 +53,11 @@ let mobileSlide = () => {
   });
 
   
-  navLinks.forEach(link => link.addEventListener("click", ()=> {
-    nav.classList.remove("mobile-active");
-  }));
+  // navLinks.forEach(link => link.addEventListener("click", ()=> {
+  //   nav.classList.toggle("mobile-active");
+  //   mobileMenu.classList.toggle("toggle");
+
+  // }));
   
   
 }
