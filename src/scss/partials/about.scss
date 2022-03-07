@@ -1,0 +1,244 @@
+/* ABOUT US */
+
+@import "../modules/_fonts";
+@import "../modules/_colors";
+
+/* -------------------------------------------------------------------------------- */
+
+// About Us
+#about-us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5rem;
+
+  .about-us-content {
+    margin-right: 2rem;
+    .small-title {
+      font-weight: $semi-bold;
+      font-size: $font_xxs;
+      text-align: left;
+    }
+
+    .md-title {
+      font-family: $font_sans;
+      text-align: left;
+    }
+
+    .about-us-list {
+      display: grid;
+      grid-template-columns: 2fr 5fr;
+      padding: 2rem 0 0 1rem;
+      transform: translateY(-50%);
+
+      p {
+        font-weight: $medium;
+        i {
+          margin-right: 1px;
+        }
+      }
+    }
+  }
+
+  .about-us-contact {
+    padding-left: 1rem;
+    .call-text {
+      font-weight: $medium;
+      padding: 0 1rem;
+    }
+  }
+
+  // About Us Image
+  .about-us-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+
+    img {
+      margin-bottom: 1rem;
+      max-width: 100%;
+    }
+
+    .counters {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      padding: 0 3rem 0 6rem;
+
+      .counter {
+        color: $color_primary_light;
+        font-size: $font_md;
+        font-weight: $bold;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+
+      & > div {
+        padding: 0 1rem;
+
+        h6 {
+          font-size: $font_sm;
+        }
+      }
+      font-size: $font_sm;
+      text-align: center;
+    }
+  }
+}
+
+// Media Queries
+/* ==============================
+              1700px
+   ==============================
+*/
+@media screen and(max-width: 1700px) {
+  #about-us {
+    .about-us-img {
+      .counters {
+        padding: 0;
+      }
+    }
+  }
+}
+/* ==============================
+              1100px
+   ==============================
+*/
+@media screen and(max-width: 1100px) {
+  #about-us {
+    grid-template-columns: 1fr;
+
+    .about-us-content {
+      margin-bottom: 4rem;
+      padding-right: 5rem;
+
+      .about-us-list {
+        grid-template-columns: 2fr 8fr;
+      }
+    }
+    .about-us-img {
+      flex-direction: row;
+
+      .counters {
+        grid-template-columns: 1fr;
+        align-items: center;
+        height: 100%;
+        flex: 1;
+        padding-right: 3rem;
+
+        .counter {
+          font-size: $font_lg;
+        }
+      }
+    }
+  }
+}
+/* ==============================
+              900px
+   ==============================
+*/
+@media screen and(max-width: 900px) {
+  #about-us {
+    .about-us-content {
+      padding-right: 0;
+    }
+    .about-us-img {
+      .counters {
+        padding-right: 0;
+        width: 30%;
+
+        .counter {
+          font-size: 2.2rem;
+        }
+      }
+    }
+  }
+}
+/* ==============================
+             700px
+   ==============================
+*/
+@media screen and(max-width: 700px) {
+  #about-us {
+    padding: 5rem 2rem;
+    .about-us-img {
+      flex-direction: column;
+      padding: 0 1rem;
+      .counters {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: flex-start;
+      }
+    }
+  }
+}
+/* ==============================
+             500px
+   ==============================
+*/
+@media screen and(max-width: 500px) {
+  #about-us {
+    padding: 5rem 1rem;
+
+    .about-us-content {
+      margin-right: 0;
+
+      .about-us-list {
+        grid-template-columns: 2fr 5fr;
+      }
+      .about-us-contact {
+        align-items: flex-start;
+
+        .btn {
+          margin-right: 1rem;
+
+          &.btn-mail {
+            background-color: $color_white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+              0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease-in-out;
+
+            a {
+              color: $color_primary_text;
+            }
+
+            &:hover {
+              background-color: $color_primary_light;
+
+              a {
+                color: $color_white;
+              }
+            }
+          }
+        }
+      }
+
+      .call-text {
+        display: none;
+      }
+    }
+  }
+  .about-us-img {
+    .counters {
+      & > div {
+        padding: 0 1rem;
+        .counter {
+          font-size: $font_md;
+        }
+
+        h6 {
+          font-size: $font_xs;
+        }
+      }
+    }
+  }
+}
+/* ==============================
+             400px
+   ==============================
+*/
+@media screen and(max-width: 400px) {
+  #about-us {
+    padding: 4rem 0;
+  }
+}

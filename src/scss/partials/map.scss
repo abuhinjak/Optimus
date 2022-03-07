@@ -1,0 +1,37 @@
+/* MAP */
+
+@import "../modules/_fonts";
+@import "../modules/_colors";
+
+/* -------------------------------------------------------------------------------- */
+
+// Map Container
+#map-container {
+  .map-header {
+    transform: translateY(20px);
+    .map-title {
+      background-color: $color_secondary_light;
+      font-size: $font_md;
+      font-family: $font_sans;
+      color: $color_primary_text;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 2rem 0 2rem 5rem;
+
+      i {
+        color: $color_primary_light;
+        font-size: $font_md;
+      }
+    }
+  }
+  #map {
+    height: 25rem;
+    position: relative;
+    box-shadow: 0px 10px 12px 0px rgba(50, 50, 50, 0.2);
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

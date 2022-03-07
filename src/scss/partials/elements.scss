@@ -1,0 +1,53 @@
+/* ELEMENTS */
+
+@import "../modules/_fonts";
+@import "../modules/_colors";
+
+/* -------------------------------------------------------------------------------- */
+
+// Lines
+.text-line {
+  width: 5rem;
+  height: 4px;
+  background-color: $color_primary_text;
+  margin-bottom: 1.2rem;
+}
+
+.left-line {
+  border-left: 4px solid $color_primary_light;
+  padding-left: 1rem;
+}
+
+// Container
+.container {
+  max-width: 1280px;
+  padding: 0 2rem;
+}
+
+// Titles
+.title-decoration {
+  color: $color_primary_light;
+  font-weight: $extra_bold;
+}
+
+.md-title {
+  font-family: $font_forum;
+  font-weight: $semi-bold;
+  line-height: 1.3;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.small-title {
+  text-transform: uppercase;
+  text-align: center;
+  color: $color_primary_light;
+  font-weight: $extra_bold;
+  margin-bottom: 0.8rem;
+}
+
+.lead {
+  line-height: 1.6;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+}

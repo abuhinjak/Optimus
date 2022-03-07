@@ -1,0 +1,171 @@
+/* FORM */
+
+@import "../modules/_fonts";
+@import "../modules/_colors";
+
+/* -------------------------------------------------------------------------------- */
+// Contact Container
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+
+  #contact-container {
+    display: flex;
+    padding: 5rem 5rem 6rem;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    background: $color_white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    .md-title {
+      padding-bottom: 2rem;
+      font-family: $font_sans;
+    }
+
+    #contact-content {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      position: relative;
+      z-index: 1;
+
+      #contact-info {
+        .lead {
+          padding: 0 2rem 2rem 0;
+        }
+
+        #contact-list {
+          li {
+            padding-bottom: 1rem;
+            i {
+              font-size: $font_sm;
+              color: $color_primary_light;
+              margin-right: 7px;
+            }
+            p {
+              display: inline-block;
+
+              a {
+                color: $color_primary_text;
+              }
+            }
+          }
+        }
+      }
+
+      // Contact Form
+      #contact-form {
+        input,
+        textarea {
+          font-family: $font_sans;
+          width: 100%;
+          border: none;
+          padding: 1rem 1.2rem;
+          background: $color_secondary_light;
+          border-radius: 5px;
+          margin-bottom: 15px;
+          font-size: $font_xxs;
+          text-decoration: none;
+          outline: none;
+          overflow: hidden;
+        }
+
+        button {
+          color: $color_white;
+          letter-spacing: 1px;
+          font-weight: $semi-bold;
+
+          &:hover {
+            color: $color_primary_text;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+/* ==============================
+             1440px
+   ==============================
+*/
+@media screen and(max-width: 1440px) {
+  #contact {
+    #contact-container {
+      padding: 5rem 2rem 6rem;
+    }
+  }
+}
+/* ==============================
+             1100px
+   ==============================
+*/
+@media screen and(max-width: 1100px) {
+  #contact {
+    #contact-container {
+      width: 80%;
+    }
+  }
+}
+/* ==============================
+             900px
+   ==============================
+*/
+@media screen and(max-width: 900px) {
+  #contact {
+    #contact-container {
+      width: 95%;
+    }
+  }
+}
+/* ==============================
+             700px
+   ==============================
+*/
+@media screen and(max-width: 700px) {
+  #contact {
+    #contact-container {
+      width: 100%;
+      #contact-content {
+        grid-template-columns: 1fr;
+        width: 80%;
+        #contact-info {
+          display: none;
+        }
+      }
+    }
+  }
+}
+/* ==============================
+             600px
+   ==============================
+*/
+@media screen and(max-width: 600px) {
+  #contact {
+    padding: 5rem 2rem;
+    #contact-container {
+      #contact-content {
+        width: 90%;
+      }
+    }
+  }
+}
+/* ==============================
+             500px
+   ==============================
+*/
+@media screen and(max-width: 500px) {
+  #contact {
+    padding: 5rem 2rem;
+    #contact-container {
+      padding: 4rem 1rem 5rem;
+      #contact-content {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+/* Contact - INFO */
+
+@import "../modules/_fonts";
+@import "../modules/_colors";
+
+/* -------------------------------------------------------------------------------- */
+
+#contact-bg {
+  margin-top: -10rem;
+  padding: 10rem 2rem 5rem;
+  background-image: url(/images/contact-bg-info.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .main-info {
+    #contact-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      justify-content: space-around;
+      padding: 1rem 1rem 3rem;
+      border-bottom: 1px dotted $color_secondary_text;
+      .list-icon {
+        text-align: center;
+        padding-bottom: 0.5rem;
+        i {
+          color: $color_white;
+          font-weight: $bold;
+        }
+      }
+      p,
+      a {
+        text-align: center;
+        color: $color_white;
+        padding: 0 2rem;
+        font-weight: $bold;
+      }
+    }
+  }
+
+  .call-us {
+    padding: 3rem 0 2rem;
+    color: $color_white;
+    h2 {
+      a {
+        color: $color_primary_light;
+      }
+    }
+  }
+}
+
+// Media Queries
+/* ==============================
+              1000px
+   ==============================
+*/
+@media screen and(max-width: 1000px) {
+  #contact-bg {
+    .main-info {
+      #contact-list {
+        p {
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+}
+/* ==============================
+              900px
+   ==============================
+*/
+@media screen and(max-width: 900px) {
+  #contact-bg {
+    .main-info {
+      #contact-list {
+        grid-template-columns: 1fr 1fr;
+
+        li {
+          padding: 2rem 0;
+        }
+      }
+    }
+    .call-us {
+      padding: 5rem 0 1rem;
+    }
+  }
+}
+/* ==============================
+              500px
+   ==============================
+*/
+@media screen and(max-width: 500px) {
+  #contact-bg {
+    margin-top: -12rem;
+    .main-info {
+      #contact-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+/* ==============================
+              400px
+   ==============================
+*/
+@media screen and(max-width: 400px) {
+  #contact-bg {
+    .call-us {
+      text-align: center;
+      h2 {
+        a {
+          display: block;
+          padding-top: 1rem;
+        }
+      }
+    }
+  }
+}

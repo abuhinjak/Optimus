@@ -1,0 +1,33 @@
+//Font family
+
+@import url("https://fonts.googleapis.com/css2?family=Forum&family=Work+Sans:wght@400;500;600;700;800&display=swap");
+
+$font_forum: "Forum", cursive;
+$font_sans: "Work Sans", sans-serif;
+
+/* -------------------------------------------------------------------------------- */
+
+//Font sizes
+
+$font_xl: 3rem;
+$font_lg: 2.5rem;
+$font_md: 1.6rem;
+$font_sm: 1.2rem;
+$font_xs: 1rem;
+$font_xxs: 0.9rem;
+
+/* -------------------------------------------------------------------------------- */
+
+//Font weights
+
+$regular: 400;
+$medium: 500;
+$semi_bold: 600;
+$bold: 700;
+$extra_bold: 800;
+
+/* -------------------------------------------------------------------------------- */
+
+//Golden ratio
+
+$phi: 1.6180339887498948482;

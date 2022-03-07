@@ -1,0 +1,50 @@
+/* FOOTER */
+
+@import "../modules/_fonts";
+@import "../modules/_colors";
+
+/* -------------------------------------------------------------------------------- */
+// Main Footer
+#main-footer {
+  background: $color_primary_text;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  color: $color_secondary_text;
+  font-size: $font_xxs;
+
+  #nav-footer {
+    display: flex;
+
+    li {
+      margin-right: 3rem;
+
+      a {
+        color: $color_secondary_text;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $color_white;
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+/* ==============================
+              1000px
+   ==============================
+*/
+@media screen and(max-width: 1000px) {
+  #main-footer {
+    nav {
+      display: none;
+    }
+    p {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
